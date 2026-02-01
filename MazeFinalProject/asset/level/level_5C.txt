@@ -1,0 +1,55 @@
+#maze_level_5C
+maze: 0
+spawn: 240 900
+platform: 0 0 1920 120 0
+platform: 0 120 120 960 0
+platform: 120 600 180 120 0
+platform: 120 720 60 240 0
+platform: 120 960 180 120 0
+platform: 300 1020 180 60 0
+platform: 480 300 180 780 0
+platform: 660 780 60 300 0
+platform: 720 840 60 240 0
+platform: 780 960 300 120 0
+platform: 1080 1020 240 60 0
+platform: 1320 960 600 120 0
+platform: 1620 780 60 120 0
+platform: 1560 840 60 60 0
+platform: 1440 900 480 60 0
+platform: 1800 120 120 780 0
+platform: 1440 420 360 240 0
+platform: 1260 480 180 240 0
+platform: 1140 720 60 60 0
+platform: 1200 600 60 180 0
+platform: 1260 720 120 60 0
+platform: 1320 780 60 60 0
+platform: 900 120 300 300 0
+platform: 1200 120 60 120 0
+platform: 960 420 180 60 0
+platform: 960 480 120 120 0
+platform: 960 600 60 60 0
+spike: 120 584 60 16 up
+spike: 120 120 16 480 right
+spike: 120 120 780 16 down
+spike: 884 120 16 240 left
+spike: 900 420 60 16 down
+spike: 944 420 16 240 left
+spike: 960 660 60 16 down
+spike: 1080 480 16 60 right
+spike: 1080 480 60 16 down
+spike: 1140 420 16 60 right
+spike: 1140 420 60 16 down
+spike: 1200 240 16 120 right
+spike: 1200 240 60 16 down
+spike: 1260 120 16 60 right
+spike: 1260 120 120 16 down
+spike: 1080 960 16 60 right
+spike: 1080 1004 240 16 up
+spike: 1304 960 16 60 left
+spike: 1140 780 180 16 down
+spike: 1304 780 16 60 left
+spike: 1440 660 16 60 right
+spike: 1440 660 360 16 down
+spike: 1784 660 16 60 left
+trigger: 300 960 180 60 level_4C bound 360 180
+trigger: 1740 120 60 300 level_6C bound 120 960

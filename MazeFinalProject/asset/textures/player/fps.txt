@@ -1,0 +1,5 @@
+stand - 3FPS (330ms/frame)
+walk - 4FPS (250ms/frame)
+leap - 4FPS (250ms/frame)
+airborne - 3FPS (330ms/frame)
+land - 4FPS (250ms/frame)
