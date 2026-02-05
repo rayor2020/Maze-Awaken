@@ -88,7 +88,7 @@ private:
         VK_LEFT, VK_LEFT, VK_RIGHT, VK_RIGHT,
         'B', 'A', 'B', 'A'
     };
-    
+
 public:
     bool running;
 
@@ -130,10 +130,10 @@ public:
         , has_collection_weapon(false)
     {
         initgraph(width, height);
-        loadimage(&key_instruction, _T("asset/image/key_instruction.png"), 0, 0, false);
-        loadimage(&collection[0], _T("asset/textures/item/ironman.png"), 0, 0, false);
-        loadimage(&collection[1], _T("asset/textures/item/weapon.png"), 0, 0, false);
-        loadimage(&message, _T("asset/image/messagebox.png"), 0, 0, false);
+        loadimage(&key_instruction, _T("assets/textures/gui/key_instruction.png"), 0, 0, false);
+        loadimage(&collection[0], _T("assets/textures/item/ironman.png"), 0, 0, false);
+        loadimage(&collection[1], _T("assets/textures/item/weapon.png"), 0, 0, false);
+        loadimage(&message, _T("assets/textures/gui/messagebox.png"), 0, 0, false);
         setbkmode(TRANSPARENT);
         hwnd = GetHWnd();
         message_timer = -1;
@@ -164,19 +164,19 @@ public:
         next_pos = new_pos;
         now_player->init();
 
-        if (next_level->name() == L"maze_level_1B" || next_level->name() == L"asset\\level\\level_1B.txt") {
+        if (next_level->name() == L"maze_level_1B" || next_level->name() == L"assets\\levels\\level_1B.txt") {
             send_message(0);
             send_message(1);
-        } else if (next_level->name() == L"maze_level_1C" || next_level->name() == L"asset\\level\\level_1C.txt") {
+        } else if (next_level->name() == L"maze_level_1C" || next_level->name() == L"assets\\levels\\level_1C.txt") {
             send_message(2);
             send_message(3);
-        } else if (next_level->name() == L"maze_level_4D" || next_level->name() == L"asset\\level\\level_4D.txt") {
+        } else if (next_level->name() == L"maze_level_4D" || next_level->name() == L"assets\\levels\\level_4D.txt") {
             send_message(4);
-        } else if (next_level->name() == L"maze_level_6C" || next_level->name() == L"asset\\level\\level_6C.txt") {
+        } else if (next_level->name() == L"maze_level_6C" || next_level->name() == L"assets\\levels\\level_6C.txt") {
             send_message(5);
-        } else if (next_level->name() == L"maze_level_7B" || next_level->name() == L"asset\\level\\level_7B.txt") {
+        } else if (next_level->name() == L"maze_level_7B" || next_level->name() == L"assets\\levels\\level_7B.txt") {
             send_message(6);
-        } else if (next_level->name() == L"maze_level_end" || next_level->name() == L"asset\\level\\level_end.txt") {
+        } else if (next_level->name() == L"maze_level_end" || next_level->name() == L"assets\\levels\\level_end.txt") {
             if (now_player->append_data() & 1)
                 send_message(9);
             else
@@ -205,8 +205,8 @@ public:
     {
         for (std::size_t i = 0; i < LEVEL_TOTAL; ++i) {
             std::wstring file_name = level_id[i];
-            std::wstring bg_path = L"asset\\image\\" + file_name + L".png";
-            std::wstring dat_path = L"asset\\level\\" + file_name + L".txt";
+            std::wstring bg_path = L"assets\\textures\\background\\" + file_name + L".png";
+            std::wstring dat_path = L"assets\\levels\\" + file_name + L".txt";
             level_ptr new_level = std::make_shared<game_level>(
                 bg_path,
                 dat_path,
@@ -283,7 +283,8 @@ public:
         if (boss)
             outtextxy(60, 200, (L"Boss HP: " + std::to_wstring(boss->get_hp())).c_str());
     }
-    void print_collection() {
+    void print_collection()
+    {
         int dat = now_player->append_data();
         if (dat & 1) {
             has_collection_ironman = true;
@@ -345,7 +346,8 @@ public:
         print_message();
         // FlushBatchDraw();
     }
-    bool has_collection() const{
+    bool has_collection() const
+    {
         return has_collection_ironman;
     }
     void set_current_fps(double fps)
@@ -482,11 +484,11 @@ private:
 public:
     GameWindow()
     {
-        loadimage(&assets[static_cast<int>(ASSET_ID::titlescreen)], _T("asset/image/titlescreen.png"), GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT * 64, true);
-        loadimage(&assets[static_cast<int>(ASSET_ID::pausescreen)], _T("asset/image/paused.png"), GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, true);
-        loadimage(&assets[static_cast<int>(ASSET_ID::title)], _T("asset/image/title.png"), 0, 0, false);
-        loadimage(&assets[static_cast<int>(ASSET_ID::shiftscreen)], _T("asset/image/room_background.png"), 1920, 1080, true);
-        loadimage(&assets[static_cast<int>(ASSET_ID::credit)], _T("asset/image/credit.png"), 0, 0, false);
+        loadimage(&assets[static_cast<int>(ASSET_ID::titlescreen)], _T("assets/textures/background/titlescreen.png"), GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT * 64, true);
+        loadimage(&assets[static_cast<int>(ASSET_ID::pausescreen)], _T("assets/textures/gui/paused.png"), GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT, true);
+        loadimage(&assets[static_cast<int>(ASSET_ID::title)], _T("assets/textures/gui/title.png"), 0, 0, false);
+        loadimage(&assets[static_cast<int>(ASSET_ID::shiftscreen)], _T("assets/textures/background/room_background.png"), 1920, 1080, true);
+        loadimage(&assets[static_cast<int>(ASSET_ID::credit)], _T("assets/textures/background/credit.png"), 0, 0, false);
 
         current_animation_frame = 0;
         animation_frame_total = 64;
@@ -609,8 +611,8 @@ public:
                     putimage(0, -min(3096, (3000 - credit_timer) * 3096 / 2400), &assets[static_cast<int>(ASSET_ID::credit)]);
                 else
                     putimage(0, 0, &assets[static_cast<int>(ASSET_ID::credit)]);
-            }
-            else;
+            } else
+                ;
             break;
         case GAME_STATUS::END:
             game->end();

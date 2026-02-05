@@ -136,21 +136,21 @@ player::player(std::shared_ptr<game_level> level)
     pos = float_pos(0.0, 0.0);
     collide_box = float_pos(24.0, 32.0);
     collide_delta = float_pos(20.0, 32.0);
-    load_image_from_path(&img, L"asset\\image\\player.png", 64, 64, true);
+    load_image_from_path(&img, L"assets\\textures\\player\\player.png", 64, 64, true);
     img_height = 64;
     img_width = 64;
     current_animation_frame = 0;
     frame_interval = 3;
     type = OBJECT_TYPE::PLAYER;
     invincible = false;
-    load_image_from_path(&animation_list[0], L"asset\\image\\player_stand.png");
-    load_image_from_path(&animation_list[1], L"asset\\image\\player_stand_rev.png");
-    load_image_from_path(&animation_list[2], L"asset\\image\\player_stand_mask.png");
-    load_image_from_path(&animation_list[3], L"asset\\image\\player_stand_mask_rev.png");
-    load_image_from_path(&animation_list[4], L"asset\\image\\player_walk.png");
-    load_image_from_path(&animation_list[5], L"asset\\image\\player_walk_rev.png");
-    load_image_from_path(&animation_list[6], L"asset\\image\\player_walk_mask.png");
-    load_image_from_path(&animation_list[7], L"asset\\image\\player_walk_mask_rev.png");
+    load_image_from_path(&animation_list[0], L"assets\\textures\\player\\player_stand.png");
+    load_image_from_path(&animation_list[1], L"assets\\textures\\player\\player_stand_rev.png");
+    load_image_from_path(&animation_list[2], L"assets\\textures\\player\\player_stand_mask.png");
+    load_image_from_path(&animation_list[3], L"assets\\textures\\player\\player_stand_mask_rev.png");
+    load_image_from_path(&animation_list[4], L"assets\\textures\\player\\player_walk.png");
+    load_image_from_path(&animation_list[5], L"assets\\textures\\player\\player_walk_rev.png");
+    load_image_from_path(&animation_list[6], L"assets\\textures\\player\\player_walk_mask.png");
+    load_image_from_path(&animation_list[7], L"assets\\textures\\player\\player_walk_mask_rev.png");
     init();
 }
 void player::init(bool is_restart)
@@ -585,10 +585,10 @@ platform::platform(std::shared_ptr<game_level> level,
     collide_box.y = height;
     hp = 1;
     if (is_dangerous) {
-        load_image_from_path(&animation_list[0], L"asset\\image\\unstable_platform.png", 60, height * 6, true);
-        load_image_from_path(&animation_list[1], L"asset\\image\\unstable_platform_mask.png", 60, height * 6, true);
+        load_image_from_path(&animation_list[0], L"assets\\textures\\block\\unstable_platform.png", 60, height * 6, true);
+        load_image_from_path(&animation_list[1], L"assets\\textures\\block\\unstable_platform_mask.png", 60, height * 6, true);
     }
-    load_image_from_path(&animation_list[2], L"asset\\image\\platform.png", width, height, 1);
+    load_image_from_path(&animation_list[2], L"assets\\textures\\block\\platform.png", width, height, 1);
     img_height = img.getheight();
     img_width = img.getwidth();
     power_point = 0;
@@ -670,7 +670,7 @@ gate::gate(std::shared_ptr<game_level> level,
     img_width = width;
     img_height = height;
     type = OBJECT_TYPE::PLATFORM;
-    load_image_from_path(&img, L"asset\\image\\cobblestone.png", 0, 0, false);
+    load_image_from_path(&img, L"assets\\textures\\block\\cobblestone.png", 0, 0, false);
 }
 void gate::update()
 {
@@ -746,7 +746,7 @@ collection_ironman::collection_ironman(const float_pos& place_pos,
     collide_box = { 64.0, 64.0 };
     img_width = img_height = 64;
     type = OBJECT_TYPE::COLLECTION;
-    load_image_from_path(&img, L"asset/textures/item/ironman.png", 0, 0, false);
+    load_image_from_path(&img, L"assets/textures/item/ironman.png", 0, 0, false);
 }
 void collection_ironman::update()
 {
@@ -781,7 +781,7 @@ collection_weapon::collection_weapon(const float_pos& place_pos,
     collide_box = { 64.0, 64.0 };
     img_width = img_height = 64;
     type = OBJECT_TYPE::COLLECTION;
-    load_image_from_path(&img, L"asset/textures/item/weapon.png", 0, 0, false);
+    load_image_from_path(&img, L"assets/textures/item/weapon.png", 0, 0, false);
 }
 void collection_weapon::update()
 {
@@ -884,8 +884,8 @@ boss1::boss1(const std::shared_ptr<game_level>& level, const float_pos& p)
     collide_box = float_pos(128.0, 128.0);
     at_level = level;
     type = OBJECT_TYPE::ENEMY;
-    load_image_from_path(&img_list[0], L"asset\\textures\\mob\\boss_1.png", 0, 0, false);
-    load_image_from_path(&img_list[1], L"asset\\textures\\mob\\boss_1_mask.png", 0, 0, false);
+    load_image_from_path(&img_list[0], L"assets\\textures\\mob\\boss_1.png", 0, 0, false);
+    load_image_from_path(&img_list[1], L"assets\\textures\\mob\\boss_1_mask.png", 0, 0, false);
     from_last_attack = 60;
     attack_stage = 0;
     death_timer = -1;
@@ -953,8 +953,8 @@ boss2::boss2(const std::shared_ptr<game_level>& level, const float_pos& p)
     pos = p;
     next_pos = pos;
     from_last_attack = 120;
-    load_image_from_path(&img_list[0], L"asset\\textures\\mob\\boss_2.png", 128, 512, true);
-    load_image_from_path(&img_list[1], L"asset\\textures\\mob\\boss_2_mask.png", 128, 512, true);
+    load_image_from_path(&img_list[0], L"assets\\textures\\mob\\boss_2.png", 128, 512, true);
+    load_image_from_path(&img_list[1], L"assets\\textures\\mob\\boss_2_mask.png", 128, 512, true);
     img_width = 128;
     img_height = 128;
     powering = false;
@@ -1113,8 +1113,8 @@ boss3::boss3(const std::shared_ptr<game_level>& level, const float_pos& p)
     bullet_count = 1;
     holding_bullet = nullptr;
     type = OBJECT_TYPE::ENEMY;
-    load_image_from_path(&img_list[0], L"asset\\textures\\mob\\final_boss.png", 96, 768, false);
-    load_image_from_path(&img_list[1], L"asset\\textures\\mob\\final_boss_mask.png", 96, 768, false);
+    load_image_from_path(&img_list[0], L"assets\\textures\\mob\\final_boss.png", 96, 768, false);
+    load_image_from_path(&img_list[1], L"assets\\textures\\mob\\final_boss_mask.png", 96, 768, false);
     img_height = 96;
     img_width = 96;
     collide_box = { 96.0, 96.0 };
@@ -1232,8 +1232,8 @@ damaku_bullet::damaku_bullet(const std::shared_ptr<game_level>& level, int life,
     pos = at;
     type = OBJECT_TYPE::BULLET;
     velocity = init_velocity;
-    load_image_from_path(&img_list[0], L"asset\\textures\\mob\\bullet_boss_1.png", 16, 16, true);
-    load_image_from_path(&img_list[1], L"asset\\textures\\mob\\bullet_boss_1_mask.png", 16, 16, true);
+    load_image_from_path(&img_list[0], L"assets\\textures\\mob\\bullet_boss_1.png", 16, 16, true);
+    load_image_from_path(&img_list[1], L"assets\\textures\\mob\\bullet_boss_1_mask.png", 16, 16, true);
 }
 void damaku_bullet::update()
 {
@@ -1273,8 +1273,8 @@ damaku_lazer::damaku_lazer(const std::shared_ptr<game_level>& level,
     facing_angle = ang;
     aiming = aim;
     visible = true;
-    load_image_from_path(&lazer_img[0], L"asset\\image\\aim_boss_2.png", 0, 0, false);
-    load_image_from_path(&lazer_img[1], L"asset\\image\\laser_boss_2.png", 0, 0, false);
+    load_image_from_path(&lazer_img[0], L"assets\\textures\\mob\\aim_boss_2.png", 0, 0, false);
+    load_image_from_path(&lazer_img[1], L"assets\\textures\\mob\\laser_boss_2.png", 0, 0, false);
 }
 void damaku_lazer::update()
 {
@@ -1342,8 +1342,8 @@ boss3_bullet::boss3_bullet(const std::shared_ptr<game_level>& level, int life, c
     collide_box = float_pos(22.0, 32.0);
     repath_timer = 0;
     visible = true;
-    load_image_from_path(&img_list[0], L"asset\\textures\\mob\\final_boss_bullet.png", 0, 0, false);
-    load_image_from_path(&img_list[1], L"asset\\textures\\mob\\final_boss_bullet_mask.png", 0, 0, false);
+    load_image_from_path(&img_list[0], L"assets\\textures\\mob\\final_boss_bullet.png", 0, 0, false);
+    load_image_from_path(&img_list[1], L"assets\\textures\\mob\\final_boss_bullet_mask.png", 0, 0, false);
 }
 void boss3_bullet::update()
 {

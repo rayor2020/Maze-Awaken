@@ -1,0 +1,25 @@
+#maze_level_1B
+maze: 0
+spawn: 240 780
+platform: 0 0 1620 240 0
+platform: 1740 0 180 180 0
+platform: 0 240 900 180 0
+platform: 0 360 720 180 0
+platform: 0 540 540 180 0
+platform: 0 0 180 1080 0
+platform: 0 900 1440 180 0
+platform: 720 780 720 120 0
+platform: 840 660 615 120 0
+platform: 1715 660 240 420 0
+platform: 1740 360 240 120 0
+platform: 1920 0 60 1080 0
+spike: 540 540 16 180 right
+spike: 540 540 120 16 down
+spike: 720 420 120 16 down
+spike: 720 420 16 120 right
+spike: 900 240 16 120 right
+spike: 1724 360 16 120 left
+trigger: 1860 180 60 180 level_1C bound 120 240
+trigger: 1860 480 60 180 level_1C bound 120 540
+trigger: 1620 0 120 60 level_2B bound 1500 780
+collection: iron_man 240 660

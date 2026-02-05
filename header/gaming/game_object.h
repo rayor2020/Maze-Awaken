@@ -32,7 +32,7 @@ public:
     {
         int status = loadimage(img, path.c_str(), set_height, set_width, resize);
         if (status != NO_ERROR)
-            status = loadimage(img, L"asset\\image\\default.png", set_height, set_width, resize);
+            status = loadimage(img, L"assets\\textures\\default.png", set_height, set_width, resize);
         // std::wcout << L"Loading from path " << path << ": " << status << std::endl;
     }
 

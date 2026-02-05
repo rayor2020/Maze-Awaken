@@ -1,0 +1,7 @@
+#maze_level_end
+spawn: 120 900
+platform: 0 0 1920 60 0
+platform: 0 0 60 1080 0
+platform: 1860 0 60 1080 0
+platform: 0 1020 1920 60 0
+trigger: 900 900 120 120 end

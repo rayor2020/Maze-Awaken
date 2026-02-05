@@ -92,7 +92,7 @@ const std::wstring level_id[LEVEL_TOTAL] = {
     L"level_end"
 };
 // 默认缺省路径
-const std::string DEFAULT_ASSET_PATH = "asset\\image\\default.png";
+const std::string DEFAULT_ASSET_PATH = "assets\\textures\\default.png";
 // 游戏运行的帧率
 const int GAME_FPS = 60;
 // 收集品总数

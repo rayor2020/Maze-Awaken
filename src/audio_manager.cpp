@@ -11,7 +11,7 @@ AudioManager& AudioManager::getInstance()
 bool AudioManager::loadAudioFiles()
 {
     // 获取当前工作目录
-    std::string basePath = "./asset/sound/";
+    std::string basePath = "./assets/sound/";
 
     try {
         // 加载音乐文件 (ogg格式)
@@ -143,7 +143,7 @@ bool AudioManager::loadAudioFiles()
             sf::Sound* sound = new sf::Sound(*pair.second);
             m_soundMap[pair.first] = sound;
         }
-        
+
         std::cout << "Successfully loaded all audio files!" << std::endl;
         return true;
     } catch (const std::exception& e) {
@@ -178,24 +178,28 @@ void AudioManager::stopMusic(const std::string& name)
         it->second->stop();
     }
 }
-void AudioManager::pauseMusic(const std::string& name){
+void AudioManager::pauseMusic(const std::string& name)
+{
     auto it = m_musicMap.find(name);
     if (it != m_musicMap.end()) {
         it->second->pause();
     }
 }
-void AudioManager::pauseAllMusic(){
+void AudioManager::pauseAllMusic()
+{
     for (auto& pair : m_musicMap) {
         pair.second->pause();
     }
 }
-void AudioManager::unpauseMusic(const std::string& name) {
+void AudioManager::unpauseMusic(const std::string& name)
+{
     auto it = m_musicMap.find(name);
     if (it != m_musicMap.end()) {
         it->second->play();
     }
 }
-void AudioManager::unpauseAllMusic() {
+void AudioManager::unpauseAllMusic()
+{
     for (auto& pair : m_musicMap) {
         pair.second->play();
     }

@@ -1,0 +1,30 @@
+#maze_level_2D
+maze: 0
+spawn: 180 600
+platform: 0 0 1620 120 0
+platform: 1620 0 300 60 0
+platform:0 120 120 360 0
+platform: 0 480 60 180 0
+platform: 0 660 180 420 0
+platform: 180 660 120 120 0
+platform: 180 960 1740 120 0
+platform: 1380 780 60 180 0
+platform: 1440 720 480 240 0
+platform: 1320 360 60 240 0
+platform: 1380 360 60 180 0
+platform: 1440 300 120 180 0
+platform: 1560 300 240 120 0
+platform: 1800 60 120 660 0
+platform: 0 0 120 480 0
+platform: 600 660 180 60 1
+platform: 1020 480 180 60 1
+spike: 180 900 16 60 right
+spike: 180 944 1200 16 up
+spike: 1364 780 16 180 left
+spike: 1380 764 60 16 up
+spike: 1424 720 16 60 left
+spike: 1320 600 60 16 down
+spike: 1380 540 60 16 down
+spike: 1380 540 16 60 right
+trigger: 1620 60 180 60 level_3D bound 1560 780
+trigger: 60 480 60 180 level_2C bound 1680 540
