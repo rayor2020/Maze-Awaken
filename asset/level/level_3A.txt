@@ -1,0 +1,59 @@
+#maze_level_3A
+maze: 0
+spawn: 1500 740
+platform: 0 0 1920 60 0
+platform: 0 60 1620 60 0
+platform: 900 120 600 60 0
+platform: 900 180 480 60 0
+platform: 900 240 420 60 0
+platform: 960 300 240 60 0
+platform: 540 240 180 300 0
+platform: 0 0 120 1080 0
+platform: 120 540 180 540 0
+platform: 300 660 120 420 0
+platform: 420 780 60 300 0
+platform: 480 840 240 240 0
+platform: 720 960 780 120 0
+platform: 720 840 120 60 1
+platform: 1380 840 120 60 1
+platform: 1500 840 120 240 0
+platform: 1620 1020 180 60 0
+platform: 600 540 240 60 0
+platform: 660 600 780 60 0
+platform: 1260 600 180 60 0
+platform: 1440 480 480 240 0
+platform: 1620 360 300 60 0
+platform: 1800 0 120 1080 0
+platform: 1440 420 480 60 0
+platform: 1260 540 180 60 0
+platform: 960 480 180 60 1
+spike: 720 944 780 16 up
+spike: 660 660 780 16 down
+spike: 720 900 16 60 right
+spike: 1484 900 16 60 left
+spike: 600 600 60 16 left
+spike: 644 600 16 60 down
+spike: 540 540 60 16 left
+spike: 584 540 16 60 down
+spike: 524 240 16 300 left
+spike: 420 720 16 60 right
+spike: 420 764 60 16 up
+spike: 480 780 16 60 right
+spike: 480 824 60 16 up
+spike: 720 524 120 16 up
+spike: 720 480 16 60 right
+spike: 840 120 60 16 down
+spike: 944 300 16 60 left
+spike: 1200 300 16 60 right
+spike: 1320 240 16 60 right
+spike: 1380 180 16 60 right
+spike: 840 584 420 16 up
+spike: 1260 524 180 16 up
+spike: 1424 420 16 120 left
+spike: 884 120 16 180 left
+spike: 900 300 60 16 down
+spike: 1200 300 120 16 down
+spike: 1320 240 60 16 down
+spike: 1380 180 60 16 down
+trigger: 1620 960 180 60 level_2A bound 1740 120
+trigger: 1620 60 180 60 level_6B bound 1620 840 

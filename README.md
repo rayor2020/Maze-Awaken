@@ -1,8 +1,10 @@
+# Maze: Awaken
+
 ## 项目简介
 
-这是CS101A课程的期末项目，是一个迷宫题材的平台跳跃游戏。
-本项目基于EasyX与SFML，不包含AI参与代码，部分非游戏功能参考了一些开源网站上的解决方案。
-本项目的编译依托Visual Studio，打包分发通过附带的.msi实现。
+这是 CS101A(H) 课程的期末项目，是一个迷宫题材的平台跳跃游戏。
+本项目基于 EasyX 与 SFML ，不包含AI参与代码，部分非游戏功能参考了一些开源网站上的解决方案。
+本项目的编译依托 Visual Studio。
 
 ## 运行环境要求
 
@@ -14,28 +16,17 @@
 
 ## 依赖库安装
 
-在编译项目前，请确保安装以下两个库：
+在编译项目前，请确保已安装了以下两个库：
 
 1. 安装 EasyX 图形库
-	- 运行项目提供的 `EasyX_25.9.10.exe` 安装程序即可。
 2. 安装 SFML 音频库（通过 vcpkg）
-	- 请确保已安装 **git** 并保持网络连接，然后在命令行中执行以下命令：
-```powershell
-git clone https://github.com/Microsoft/vcpkg.git
-cd vcpkg
-.\bootstrap-vcpkg.bat
-.\vcpkg install sfml:x64-windows
-.\vcpkg integrate install
-```
-
-> 安装时间取决于您的网络状况。
 
 ## 编译与运行步骤
 
 1. **打开项目**
    - 使用 **Visual Studio** 打开 `MazeFinalProject.sln`。
 
-2. **配置项目**
+1. **确保项目正确配置**
    - 在顶部菜单选择 **项目 → 属性**。
    - 将左上角 **配置** 设置为 **所有配置**。
    - 进入 **C/C++ → 语言**。
@@ -45,9 +36,6 @@ cd vcpkg
 3. **编译并运行**
    - 点击工具栏中的 **本地 Windows 调试器**（或按 `F5`）编译并启动游戏。
 
-**如果您编译遇到困难但非常想体验本作品，可运行 一键安装.msi 快速安装。**
-
 ## 开源代码参考
-SFML
-EasyX
-https://codebus.cn/yangw/transparent-putimage
+
+[详解透明贴图和三元光栅操作](https://codebus.cn/yangw/transparent-putimage)
