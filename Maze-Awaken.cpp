@@ -4,13 +4,13 @@
 #include <iostream>
 #include <thread>
 
-#include <SFML/Audio.hpp>
 #include "header/gaming/audio_manager.h"
+#include <SFML/Audio.hpp>
 #include <windows.h>
 #pragma comment(lib, "shcore.lib")
-int main(){
-    
-    typedef HRESULT(WINAPI* SetProcessDpiAwarenessFunc)(int);
+int main()
+{
+    typedef HRESULT(WINAPI * SetProcessDpiAwarenessFunc)(int);
     HMODULE hShCore = LoadLibraryW(L"Shcore.dll");
     if (hShCore) {
         SetProcessDpiAwarenessFunc pSetProcessDpiAwareness = (SetProcessDpiAwarenessFunc)GetProcAddress(hShCore, "SetProcessDpiAwareness");

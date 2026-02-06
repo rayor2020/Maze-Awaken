@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../utils/position.h"
 #include "game_object.h"
 #include "maze_router.h"
@@ -24,7 +24,13 @@ private:
     bool game_maze_map[MAZE_HEIGHT][MAZE_WIDTH]; // 关卡迷宫数据
     bool is_maze_level; // 是否为迷宫关
     maze_router router; // 寻路机
+    // 预计算的屏幕中心偏移值，避免每帧重复计算
+    float screen_center_x;
+    float screen_center_y;
+
 private:
+    // 新的坐标转换方法，使用预计算值提高性能
+    float_pos to_screen_coord(const float_pos& real_coord, const float_pos& camera_pos) const;
     static std::vector<std::wstring> split(const std::wstring& line, wchar_t space = L' ');
     void load_level_from(const std::wstring& level_dat);
 

@@ -1,4 +1,4 @@
-﻿#include "../header/gaming/game_level.h"
+#include "../header/gaming/game_level.h"
 #include "../header/gaming/game_main.h"
 #include "../header/utils/maze_utils.h"
 #include "../header/utils/position.h"
@@ -21,6 +21,14 @@ std::vector<std::wstring> game_level::split(const std::wstring& line, wchar_t sp
     }
     return res;
 }
+
+// 坐标转换
+float_pos game_level::to_screen_coord(const float_pos& real_coord, const float_pos& camera_pos) const
+{
+    return { real_coord.x - camera_pos.x + screen_center_x,
+        real_coord.y - camera_pos.y + screen_center_y };
+}
+
 void game_level::load_level_from(const std::wstring& level_dat)
 {
     std::wifstream level_file;
@@ -124,7 +132,7 @@ void game_level::load_level_from(const std::wstring& level_dat)
             if (words[1] == L"iron_man") {
                 int x = std::stoi(words[2]),
                     y = std::stoi(words[3]);
-                if(!game_instance()->has_collection())
+                if (!game_instance()->has_collection())
                     add_object(std::make_shared<collection_ironman>(float_pos(x, y), shared_from_this()));
             } else if (words[1] == L"weapon") {
                 int x = std::stoi(words[2]),
@@ -150,6 +158,9 @@ game_level::game_level(const std::wstring& background_path, const std::wstring& 
     level_name = level_dat;
     level_dat_path = level_dat;
     holding_player = nullptr;
+    // 预计算屏幕中心偏移值
+    screen_center_x = GAME_WINDOW_WIDTH * 0.5f;
+    screen_center_y = GAME_WINDOW_HEIGHT * 0.5f;
 }
 std::shared_ptr<game_level> game_level::get_level_from_name(const std::wstring& name)
 {
@@ -207,16 +218,12 @@ void game_level::add_object_request(obj_ptr new_obj)
 }
 void game_level::draw_level_frame(const float_pos& camera_pos) const
 {
-    auto to_screen_coord = [&](const float_pos& real_coord) -> float_pos {
-        return { real_coord.x - camera_pos.x + GAME_WINDOW_WIDTH * 0.5,
-            real_coord.y - camera_pos.y + GAME_WINDOW_HEIGHT * 0.5 };
-    };
-    float_pos bg_pos = to_screen_coord({ 0.0, 0.0 });
+    float_pos bg_pos = to_screen_coord({ 0.0, 0.0 }, camera_pos);
     putimage(int(bg_pos.x), int(bg_pos.y), &background);
     if (holding_player != nullptr)
-        holding_player->draw_on(to_screen_coord(holding_player->get_pos()));
+        holding_player->draw_on(to_screen_coord(holding_player->get_pos(), camera_pos));
     for (auto& obj : obj_list) {
-        obj->draw_on(to_screen_coord(obj->get_pos()));
+        obj->draw_on(to_screen_coord(obj->get_pos(), camera_pos));
     }
 }
 float_pos game_level::spawn_point() const
