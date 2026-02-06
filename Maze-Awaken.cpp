@@ -1,4 +1,4 @@
-﻿#include "header/gaming/game_main.h"
+#include "header/gaming/game_main.h"
 #include <chrono>
 #include <easyx.h>
 #include <iostream>
@@ -24,6 +24,11 @@ int main()
     GameMain game;
     GameWindow window;
     window.set_game(std::shared_ptr<GameMain>(&game));
+
+    // 设置窗口标题，希望以后能改成更好的方法（弃用EasyX）
+    HWND hwnd = GetHWnd();
+    SetWindowTextW(hwnd, L"Maze: Awaken");
+
     AudioManager& audioManager = AudioManager::getInstance();
     if (!audioManager.loadAudioFiles()) {
         std::cerr << "Failed to load audio files!" << std::endl;
