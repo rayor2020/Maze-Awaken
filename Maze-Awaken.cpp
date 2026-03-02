@@ -6,6 +6,7 @@
 
 #include "header/gaming/audio_manager.h"
 #include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
 #include <windows.h>
 #pragma comment(lib, "shcore.lib")
 int main()

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "../utils/maze_utils.h"
 #include "../utils/position.h"
@@ -13,6 +13,9 @@
 #include <map>
 #include <memory>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
+
 #define KEY_DOWN(hWnd, K) ((GetAsyncKeyState(K) & 0x8000 ? 1 : 0) && GetForegroundWindow() == hWnd)
 // 来自 https://codebus.cn/yangw/transparent-putimage
 // 处理半透明贴图

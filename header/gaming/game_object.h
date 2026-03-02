@@ -6,6 +6,9 @@
 #include <queue>
 #include <string>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
+
 static int global_object_id = 0;
 class game_level;
 class game_object : public std::enable_shared_from_this<game_object> {

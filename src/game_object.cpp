@@ -11,6 +11,8 @@
 #include <numbers>
 #include <set>
 #include <thread>
+
+#include <SFML/Graphics.hpp>
 #pragma comment(lib, "MSIMG32.lib")
 static void draw_image(IMAGE& image, int x, int y, int w = -1, int h = -1)
 {

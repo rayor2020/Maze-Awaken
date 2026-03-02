@@ -5,6 +5,9 @@
 #include <easyx.h>
 #include <fstream>
 #include <iostream>
+
+#include <SFML/Graphics.hpp>
+
 std::vector<std::wstring> game_level::split(const std::wstring& line, wchar_t space)
 {
     std::size_t s = line.length();

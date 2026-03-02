@@ -3,6 +3,9 @@
 #define MAZEUTILITY_H
 #include <easyx.h>
 #include <string>
+
+#include <SFML/Graphics.hpp>
+
 const int GAME_WINDOW_WIDTH = 1920;
 const int GAME_WINDOW_HEIGHT = 1080;
 const int GAME_BACKGROUND_TOTAL = 5;

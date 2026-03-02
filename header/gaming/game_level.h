@@ -7,6 +7,9 @@
 #include <list>
 #include <memory>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
+
 class GameMain;
 using game_ptr = std::shared_ptr<GameMain>;
 class game_level : public std::enable_shared_from_this<game_level> {
